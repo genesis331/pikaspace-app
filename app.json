@@ -1,0 +1,12 @@
+{
+  "name": "pikaspace-app",
+  "displayName": "pikaspace-app",
+  "expo": {
+    "name": "pikaspace-app",
+    "slug": "pikaspace-app",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
