@@ -3,6 +3,8 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import Oobe from './pages/oobe/oobe';
 import SignIn from './pages/oobe/signin';
+import SlideIntro from './pages/oobe/slideintro';
+import Home from './pages/main/home';
 import * as Font from 'expo-font';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -37,6 +39,8 @@ export default class App extends React.Component {
             <Stack.Navigator>
               <Stack.Screen name="Oobe" component={Oobe} options={{headerShown: false}}/>
               <Stack.Screen name="SignIn" component={SignIn} options={{headerShown: false}}/>
+              <Stack.Screen name="SlideIntro" component={SlideIntro} options={{headerShown: false}}/>
+              <Stack.Screen name="Home" component={Home} options={{headerShown: false}}/>
             </Stack.Navigator>
           </NavigationContainer>
         </View>
