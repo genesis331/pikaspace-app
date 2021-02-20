@@ -115,7 +115,8 @@ const styles = StyleSheet.create({
         textAlign: "center"
     },
     introText: {
-        fontFamily: "MadeTommy"
+        fontFamily: "MadeTommy",
+        textAlign: "center"
     },
     buttonText: {
         fontSize: 13,
