@@ -48,6 +48,6 @@ const styles = StyleSheet.create({
         fontSize: 13,
         color: '#fff',
         textTransform: "uppercase",
-        fontFamily: 'MadeTommy'
+        fontFamily: 'MadeTommyMedium'
     }
 });

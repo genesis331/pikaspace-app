@@ -23,7 +23,7 @@ export default function Oobe({ navigation }) {
                             style={{ backgroundColor: '#02325B', alignItems: "center", paddingVertical: 12.5, borderBottomRightRadius: 19, borderTopLeftRadius: 19, marginVertical: 11 }}>
                             <Text style={styles.buttonText}>Sign Up with Facebook</Text>
                         </TouchableOpacity>
-                        <Text style={{ alignSelf: "center", textTransform: "uppercase", color: "#fff", fontSize: 11, fontFamily: 'MadeTommy', marginTop: 50, marginBottom: 70 }}>
+                        <Text style={{ alignSelf: "center", textTransform: "uppercase", color: "#fff", fontSize: 11, fontFamily: 'MadeTommyMedium', marginTop: 50, marginBottom: 70 }}>
                             Already have an account? <Text style={{textDecorationLine: "underline"}} onPress={() => navigation.navigate('SignIn')}>Log In</Text>
                         </Text>
                     </View>
@@ -49,6 +49,6 @@ const styles = StyleSheet.create({
         fontSize: 13,
         color: '#fff',
         textTransform: "uppercase",
-        fontFamily: 'MadeTommy'
+        fontFamily: 'MadeTommyMedium'
     }
 });

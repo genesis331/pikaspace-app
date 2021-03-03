@@ -72,10 +72,12 @@ const styles = StyleSheet.create({
         left: 0,
         right: 0,
         paddingHorizontal: 14,
-        paddingVertical: 30,
+        paddingTop: 25,
+        paddingBottom: 40,
         justifyContent: 'center',
         alignItems: 'center',
-        flexDirection: 'row'
+        flexDirection: 'row',
+        backgroundColor: '#ffffff'
     },
     tabIcon: {
         flex: 1,

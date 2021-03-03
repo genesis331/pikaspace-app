@@ -115,13 +115,13 @@ const styles = StyleSheet.create({
         textAlign: "center"
     },
     introText: {
-        fontFamily: "MadeTommy",
+        fontFamily: "MadeTommyMedium",
         textAlign: "center"
     },
     buttonText: {
         fontSize: 13,
         color: '#fff',
         textTransform: "uppercase",
-        fontFamily: 'MadeTommy'
+        fontFamily: 'MadeTommyMedium'
     }
 });

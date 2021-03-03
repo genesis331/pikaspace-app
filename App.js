@@ -11,7 +11,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 let customFonts = {
   'Gobold': require('./assets/gobold/Gobold-Regular.otf'),
-  'MadeTommy': require('./assets/made_tommy/MADE-TOMMY-Medium_PERSONAL-USE.otf')
+  'MadeTommyRegular': require('./assets/made_tommy/MADE-TOMMY-Regular_PERSONAL-USE.otf'),
+  'MadeTommyMedium': require('./assets/made_tommy/MADE-TOMMY-Medium_PERSONAL-USE.otf'),
+  'MadeTommyBold': require('./assets/made_tommy/MADE-TOMMY-Bold_PERSONAL-USE.otf')
 };
 
 const Stack = createStackNavigator();
@@ -37,7 +39,7 @@ export default class App extends React.Component {
           <StatusBar style="dark" />
           <NavigationContainer>
             <Stack.Navigator>
-              <Stack.Screen name="Oobe" component={Oobe} options={{headerShown: false}}/>
+              <Stack.Screen name="Oobe" component={Main} options={{headerShown: false}}/>
               <Stack.Screen name="SignIn" component={SignIn} options={{headerShown: false}}/>
               <Stack.Screen name="SlideIntro" component={SlideIntro} options={{headerShown: false}}/>
               <Stack.Screen name="Main" component={Main} options={{headerShown: false}}/>
