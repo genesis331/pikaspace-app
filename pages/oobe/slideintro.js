@@ -61,7 +61,14 @@ export default function SlideIntro({ navigation }) {
                         <View style={styles.introTextLayers}>
                             <Text style={[styles.introText, { fontSize: 22 }]}>An entirely free platform to{'\n'}connect users & marketers.</Text>
                             <TouchableOpacity
-                                onPress={() => navigation.navigate('Main')}
+                                onPress={() => navigation.reset({
+                                    index: 0,
+                                    routes: [
+                                        {
+                                            name: 'Main'
+                                        },
+                                    ],
+                                })}
                                 style={{ backgroundColor: '#20517C', alignItems: "center", paddingVertical: 12.5, paddingHorizontal: 25, borderRadius: 17, marginTop: 35 }}>
                                 <Text style={styles.buttonText}>Let's Pikaspace</Text>
                             </TouchableOpacity>

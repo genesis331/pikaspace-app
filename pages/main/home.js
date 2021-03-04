@@ -1,4 +1,5 @@
 import React from 'react';
+import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Text, SafeAreaView, ScrollView } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { AntDesign } from '@expo/vector-icons';
@@ -6,6 +7,7 @@ import { AntDesign } from '@expo/vector-icons';
 export default function Home() {
     return (
         <View style={styles.container}>
+            <StatusBar style="dark" />
             <View style={styles.layers}>
                 <SafeAreaView>
                     <ScrollView>

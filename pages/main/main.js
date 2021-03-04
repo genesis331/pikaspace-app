@@ -9,7 +9,7 @@ import Profile from './profile';
 
 const { width, height } = Dimensions.get('window');
 
-export default function Main() {
+export default function Main({ navigation }) {
     const [sliderState, setSliderState] = useState({ currentPage: 0 });
     const setSliderPage = (event) => {
         const { currentPage } = sliderState;

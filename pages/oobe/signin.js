@@ -18,12 +18,26 @@ export default function SignIn({ navigation }) {
                 <Image source={logo} style={{ height: 60, width: 60 }} />
                 <View style={{ paddingHorizontal: 70, width: "100%", marginTop: 140 }}>
                     <TouchableOpacity
-                        onPress={() => navigation.navigate('SlideIntro')}
+                        onPress={() => navigation.reset({
+                            index: 0,
+                            routes: [
+                                {
+                                    name: 'SlideIntro'
+                                },
+                            ],
+                        })}
                         style={{ backgroundColor: '#E74949', alignItems: "center", paddingVertical: 12.5, borderBottomRightRadius: 19, borderTopLeftRadius: 19, marginVertical: 11 }}>
                         <Text style={styles.buttonText}>Sign In with Google</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
-                        onPress={() => navigation.navigate('SlideIntro')}
+                        onPress={() => navigation.reset({
+                            index: 0,
+                            routes: [
+                                {
+                                    name: 'SlideIntro'
+                                },
+                            ],
+                        })}
                         style={{ backgroundColor: '#02325B', alignItems: "center", paddingVertical: 12.5, borderBottomRightRadius: 19, borderTopLeftRadius: 19, marginVertical: 11 }}>
                         <Text style={styles.buttonText}>Sign In with Facebook</Text>
                     </TouchableOpacity>

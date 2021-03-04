@@ -36,10 +36,9 @@ export default class App extends React.Component {
     if (this.state.fontsLoaded) {
       return (
         <View style={styles.container}>
-          <StatusBar style="dark" />
           <NavigationContainer>
             <Stack.Navigator>
-              <Stack.Screen name="Oobe" component={Main} options={{headerShown: false}}/>
+              <Stack.Screen name="Oobe" component={Oobe} options={{headerShown: false}}/>
               <Stack.Screen name="SignIn" component={SignIn} options={{headerShown: false}}/>
               <Stack.Screen name="SlideIntro" component={SlideIntro} options={{headerShown: false}}/>
               <Stack.Screen name="Main" component={Main} options={{headerShown: false}}/>
