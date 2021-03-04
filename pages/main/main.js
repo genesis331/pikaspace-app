@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { StyleSheet, Dimensions, View, ScrollView } from 'react-native';
+import { BlurView } from 'expo-blur';
 import { AntDesign } from '@expo/vector-icons';
 import Home from './home';
 import Discover from './discover';
@@ -50,12 +51,12 @@ export default function Main() {
                     <Profile />
                 </View>
             </ScrollView>
-            <View style={styles.paginationWrapper}>
-                <AntDesign name="home" size={24} color={pageIndex === 0 ? "black" : "lightgrey" } style={styles.tabIcon} onPress={()=>{scrollViewRef.current?.scrollTo({x: 0})}}/>
-                <AntDesign name="search1" size={24} color={pageIndex === 1 ? "black" : "lightgrey" } style={styles.tabIcon} onPress={()=>{scrollViewRef.current?.scrollTo({x: 1 / 4 * 4 * width})}}/>
-                <AntDesign name="mail" size={24} color={pageIndex === 2 ? "black" : "lightgrey" } style={styles.tabIcon} onPress={()=>{scrollViewRef.current?.scrollTo({x: 2 / 4 * 4 * width})}}/>
-                <AntDesign name="user" size={24} color={pageIndex === 3 ? "black" : "lightgrey" } style={styles.tabIcon} onPress={()=>{scrollViewRef.current?.scrollTo({x: 3 / 4 * 4 * width})}}/>
-            </View>
+            <BlurView intensity={60} tint={"light"} style={styles.paginationWrapper}>
+                <AntDesign name="home" size={24} color={pageIndex === 0 ? "black" : "lightgrey"} style={styles.tabIcon} onPress={() => { scrollViewRef.current?.scrollTo({ x: 0 }) }} />
+                <AntDesign name="search1" size={24} color={pageIndex === 1 ? "black" : "lightgrey"} style={styles.tabIcon} onPress={() => { scrollViewRef.current?.scrollTo({ x: 1 / 4 * 4 * width }) }} />
+                <AntDesign name="mail" size={24} color={pageIndex === 2 ? "black" : "lightgrey"} style={styles.tabIcon} onPress={() => { scrollViewRef.current?.scrollTo({ x: 2 / 4 * 4 * width }) }} />
+                <AntDesign name="user" size={24} color={pageIndex === 3 ? "black" : "lightgrey"} style={styles.tabIcon} onPress={() => { scrollViewRef.current?.scrollTo({ x: 3 / 4 * 4 * width }) }} />
+            </BlurView>
         </View>
     )
 }
