@@ -39,7 +39,7 @@ export default function Main({ navigation }) {
                 ref={scrollViewRef}
             >
                 <View style={{ width, height }}>
-                    <Home />
+                    <Home navigation={navigation} />
                 </View>
                 <View style={{ width, height }}>
                     <Discover />

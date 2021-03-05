@@ -5,6 +5,7 @@ import Oobe from './pages/oobe/oobe';
 import SignIn from './pages/oobe/signin';
 import SlideIntro from './pages/oobe/slideintro';
 import Main from './pages/main/main';
+import TestPage from './pages/test/testpage';
 import * as Font from 'expo-font';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -38,10 +39,11 @@ export default class App extends React.Component {
         <View style={styles.container}>
           <NavigationContainer>
             <Stack.Navigator>
-              <Stack.Screen name="Oobe" component={Oobe} options={{headerShown: false}}/>
+              <Stack.Screen name="Oobe" component={Main} options={{headerShown: false}}/>
               <Stack.Screen name="SignIn" component={SignIn} options={{headerShown: false}}/>
               <Stack.Screen name="SlideIntro" component={SlideIntro} options={{headerShown: false}}/>
               <Stack.Screen name="Main" component={Main} options={{headerShown: false}}/>
+              <Stack.Screen name="TestPage" component={TestPage} options={{headerShown: false}}/>
             </Stack.Navigator>
           </NavigationContainer>
         </View>

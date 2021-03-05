@@ -1,13 +1,20 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, Text, SafeAreaView, ScrollView } from 'react-native';
+import { StyleSheet, View, Text, SafeAreaView, ScrollView, Image, Dimensions } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { AntDesign } from '@expo/vector-icons';
+import topDecoImg from "../../assets/images/Main-Page-Illus-3.png";
+let source = Image.resolveAssetSource(topDecoImg);
 
-export default function Home() {
+const win = Dimensions.get('window');
+
+export default function Home({ navigation }) {
     return (
         <View style={styles.container}>
             <StatusBar style="dark" />
+            <View style={styles.layers}>
+                <Image source={topDecoImg} style={{ width: win.width, height: source.height * win.width / source.width }} />
+            </View>
             <View style={styles.layers}>
                 <SafeAreaView>
                     <ScrollView>
@@ -21,7 +28,7 @@ export default function Home() {
                                 </TouchableOpacity>
                             </View>
                             <View style={{ flex: 0.3 }}>
-                                <TouchableOpacity style={styles.searchButton}>
+                                <TouchableOpacity style={styles.searchButton} onPress={() => navigation.navigate('TestPage')}>
                                     <Text style={{ fontFamily: 'MadeTommyMedium', fontSize: 17, textAlign: "center" }}>Filter</Text>
                                 </TouchableOpacity>
                             </View>
@@ -55,7 +62,7 @@ const styles = StyleSheet.create({
     },
     searchBar: {
         paddingHorizontal: 35,
-        marginTop: 45,
+        marginTop: 20,
         flexDirection: "row",
         justifyContent: "center"
     },
@@ -71,7 +78,7 @@ const styles = StyleSheet.create({
     },
     welcomeMsg: {
         paddingHorizontal: 45,
-        marginTop: 40,
+        marginTop: 45,
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center"

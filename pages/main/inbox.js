@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     },
     screenTitle: {
         paddingHorizontal: 40,
-        marginTop: 45
+        marginTop: 25
     },
     screenTitleText: {
         fontFamily: 'MadeTommyMedium',

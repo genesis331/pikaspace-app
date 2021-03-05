@@ -2,16 +2,16 @@ import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Text, TouchableOpacity, Image, Dimensions } from 'react-native';
 import oobe1 from "../../assets/images/Main-Page-Illus.png";
+let source = Image.resolveAssetSource(oobe1);
 
 const win = Dimensions.get('window');
-const ratio1 = win.width / 771;
 
 export default function Oobe({ navigation }) {
     return (
         <View style={styles.container}>
             <StatusBar style="light" />
             <View style={styles.layers}>
-                <Image source={oobe1} style={{width: win.width, height: 861 * ratio1}}/>
+                <Image source={oobe1} style={{width: win.width, height: source.height * win.width / source.width}}/>
             </View>
             <View style={styles.layers}>
                 <View style={{ position: "absolute", bottom: 0, width: "100%" }}>

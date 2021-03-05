@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, Dimensions, TouchableOpacity, ScrollView, Image } from 'react-native';
 import intropic1 from '../../assets/images/Main-Page-Illus-4.png';
+let source1 = Image.resolveAssetSource(intropic1);
 import intropic2 from '../../assets/images/Main-Page-Illus-5.png';
+let source2 = Image.resolveAssetSource(intropic2);
 import intropic3 from '../../assets/images/Main-Page-Illus-6.png';
+let source3 = Image.resolveAssetSource(intropic3);
 
 const { width, height } = Dimensions.get('window');
 
@@ -34,7 +37,7 @@ export default function SlideIntro({ navigation }) {
             >
                 <View style={{ width, height }}>
                     <View style={styles.layers}>
-                        <Image source={intropic1} style={{ width: width, height: 953 * (width / 771) }} />
+                        <Image source={intropic1} style={{ width: width, height: source1.height * (width / source1.width) }} />
                     </View>
                     <View style={styles.layers}>
                         <View style={styles.introTextLayers}>
@@ -45,7 +48,7 @@ export default function SlideIntro({ navigation }) {
                 </View>
                 <View style={{ width, height }}>
                     <View style={styles.layers}>
-                        <Image source={intropic2} style={{ width: width, height: 957 * (width / 771) }} />
+                        <Image source={intropic2} style={{ width: width, height: source2.height * (width / source2.width) }} />
                     </View>
                     <View style={styles.layers}>
                         <View style={styles.introTextLayers}>
@@ -55,7 +58,7 @@ export default function SlideIntro({ navigation }) {
                 </View>
                 <View style={{ width, height }}>
                     <View style={styles.layers}>
-                        <Image source={intropic3} style={{ width: width, height: 971 * (width / 771) }} />
+                        <Image source={intropic3} style={{ width: width, height: source3.height * (width / source3.width) }} />
                     </View>
                     <View style={styles.layers}>
                         <View style={styles.introTextLayers}>

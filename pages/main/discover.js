@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     },
     searchBar: {
         paddingHorizontal: 35,
-        marginTop: 45,
+        marginTop: 20,
         flexDirection: "row",
         justifyContent: "center"
     },
