@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, ScrollView, SafeAreaView, Image, Dimensions, Animated, LayoutAnimation } from 'react-native';
 import topDecoImg from "../../assets/images/Main-Page-Illus-2.png";
 let source = Image.resolveAssetSource(topDecoImg);
@@ -7,48 +7,17 @@ import tempPic from "../../assets/images/hardcoded/shuaiger.png";
 const win = Dimensions.get('window');
 
 export default function Profile() {
-    let topDecoImgVisibility = new Animated.Value(1);
-    const [profPicSize, setProfPicSize] = useState(115);
-    const [profPicMargin, setProfPicMargin] = useState(10);
-    const [topPartAlignment, setTopPartAlignment] = useState("space-around");
-    const handleScroll = (event) => {
-        LayoutAnimation.configureNext(LayoutAnimation.create(200, 'linear', 'opacity'));
-        if (event.nativeEvent.contentOffset.y > 15) {
-            Animated.timing(topDecoImgVisibility, {
-                toValue: 0,
-                duration: 100,
-                useNativeDriver: true
-            }).start()
-        } else {
-            Animated.timing(topDecoImgVisibility, {
-                toValue: 1,
-                duration: 100,
-                useNativeDriver: true
-            }).start()
-        }
-
-        if (event.nativeEvent.contentOffset.y > 15) {
-            setTopPartAlignment("flex-start");
-            setProfPicSize(90);
-            setProfPicMargin(25);
-        } else {
-            setTopPartAlignment("space-around");
-            setProfPicSize(115);
-            setProfPicMargin(10);
-        }
-    }
-
     return (
         <View style={styles.container}>
-            <Animated.View style={[styles.layers, { opacity: topDecoImgVisibility }]}>
+            <Animated.View style={[styles.layers, { opacity: 1 }]}>
                 <Image source={topDecoImg} style={{ width: win.width, height: source.height * win.width / source.width }} />
             </Animated.View>
             <View style={styles.layers}>
                 <SafeAreaView>
-                    <ScrollView onScroll={handleScroll} scrollEventThrottle={160}>
-                        <Animated.View style={[styles.profileTop, { justifyContent: topPartAlignment }]}>
+                    <ScrollView>
+                        <Animated.View style={[styles.profileTop, { justifyContent: "space-around" }]}>
                             <View>
-                                <Animated.View style={[styles.profPicFrame, { height: profPicSize, width: profPicSize, marginRight: profPicMargin }]}>
+                                <Animated.View style={[styles.profPicFrame, { height: 115, width: 115, marginRight: 10 }]}>
                                     <Image source={tempPic} style={{ borderRadius: 60, height: "100%", width: "100%" }} />
                                 </Animated.View>
                             </View>
