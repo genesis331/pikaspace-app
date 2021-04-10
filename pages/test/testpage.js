@@ -1,5 +1,7 @@
+import { LinearGradient } from 'expo-linear-gradient';
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, SafeAreaView, Modal, TouchableHighlight } from 'react-native';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 export default function TestPage() {
     const [modalVisible, setModalVisible] = useState(false);
@@ -20,17 +22,20 @@ export default function TestPage() {
                     visible={modalVisible}
                 >
                     <View style={styles.centeredView}>
-                        <View style={styles.modalView}>
-                            <Text style={styles.modalText}>Hello World!</Text>
-
-                            <TouchableHighlight
-                                style={{ ...styles.openButton, backgroundColor: '#2196F3' }}
-                                onPress={() => {
-                                    setModalVisible(!modalVisible);
-                                }}>
-                                <Text style={styles.textStyle}>Hide Modal</Text>
-                            </TouchableHighlight>
-                        </View>
+                        <LinearGradient colors={["#73DFFF", "#16BE8C"]} style={styles.modalView}>
+                            <View>
+                                <FontAwesome5 name="check-circle" size={100} color="white" style={{textAlign: 'center'}}/>
+                                <Text style={styles.modalText}>Booked!</Text>
+                                <Text style={styles.modalText}>View your booking in{'\n'}Profile &gt; Manage Booking</Text>
+                                <TouchableHighlight
+                                    style={{ ...styles.openButton, backgroundColor: '#2196F3' }}
+                                    onPress={() => {
+                                        setModalVisible(!modalVisible);
+                                    }}>
+                                    <Text style={styles.textStyle}>GO TO MANAGE BOOKING</Text>
+                                </TouchableHighlight>
+                            </View>
+                        </LinearGradient>
                     </View>
                 </Modal>
             </SafeAreaView>
@@ -56,7 +61,7 @@ const styles = StyleSheet.create({
     },
     modalView: {
         flex: 0.8,
-        justifyContent: 'flex-end',
+        justifyContent: "space-around",
         backgroundColor: 'white',
         borderRadius: 50,
         padding: 35,
@@ -76,5 +81,6 @@ const styles = StyleSheet.create({
     modalText: {
         marginBottom: 15,
         textAlign: 'center',
+        color: "white"
     },
 });

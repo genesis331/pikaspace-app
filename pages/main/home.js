@@ -4,7 +4,9 @@ import { StyleSheet, View, Text, SafeAreaView, ScrollView, Image, Dimensions } f
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { AntDesign } from '@expo/vector-icons';
 import topDecoImg from "../../assets/images/Main-Page-Illus-3.png";
+import tempPic from "../../assets/images/hardcoded/shuaiger.png";
 let source = Image.resolveAssetSource(topDecoImg);
+import HomeCard from "../../components/HomeCard";
 
 const win = Dimensions.get('window');
 
@@ -38,9 +40,12 @@ export default function Home({ navigation }) {
                                 <Text style={{ fontFamily: 'MadeTommyMedium', fontSize: 20 }}>Good Morning, Peyter!</Text>
                             </View>
                             <View>
-                                <AntDesign name="user" size={19} color="black" />
+                                <Image source={tempPic} style={{ borderRadius: 60, height: 45, width: 45 }} />
                             </View>
                         </View>
+                        <HomeCard />
+                        <HomeCard />
+                        <View style={{ height: 120 }}></View>
                     </ScrollView>
                 </SafeAreaView>
             </View>

@@ -19,8 +19,13 @@ export default function Inbox() {
                                 <Text style={{ fontFamily: 'MadeTommyMedium', fontSize: 16 }}>Chat</Text>
                             </TouchableOpacity>
                         </View>
-                        <ScrollView style={styles.bodyContainer}>
-                            <View>
+                        <ScrollView style={styles.bodyContainer} horizontal={true} scrollEventThrottle={16} pagingEnabled={true}>
+                            <View style={{ minWidth: "100%", minHeight: "75%", paddingTop: 40 }}>
+                                <View style={styles.blankNoti}>
+                                    <Text style={{ fontFamily: 'MadeTommyMedium', fontSize: 14 }}>No new notification.</Text>
+                                </View>
+                            </View>
+                            <View style={{ minWidth: "100%", minHeight: "75%", paddingTop: 40 }}>
                                 <View style={styles.blankNoti}>
                                     <Text style={{ fontFamily: 'MadeTommyMedium', fontSize: 14 }}>No new notification.</Text>
                                 </View>
@@ -61,10 +66,9 @@ const styles = StyleSheet.create({
     },
     bodyContainer: {
         marginTop: 14,
-        paddingHorizontal: 40,
+        paddingHorizontal: 40
     },
     blankNoti: {
-        paddingVertical: 80,
         alignItems: "center"
     }
 });
