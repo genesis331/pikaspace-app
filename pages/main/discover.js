@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text, ScrollView, SafeAreaView, TouchableOpacity } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 
-export default function Discover() {
+export default function Discover({ navigation }) {
     return (
         <View style={styles.container}>
             <View style={styles.layers}>
@@ -10,11 +10,11 @@ export default function Discover() {
                     <ScrollView>
                         <View style={styles.searchBar}>
                             <View style={{ flex: 0.7 }}>
-                                <TouchableOpacity style={styles.searchInput}>
+                                <TouchableOpacity style={styles.searchInput} onPress={() => navigation.navigate('Search')}>
                                     <Text style={{ fontFamily: 'MadeTommyMedium', fontSize: 17, paddingLeft: 18 }}>
                                         <AntDesign name="search1" size={19} color="black" />
-                                &nbsp;&nbsp;Search
-                            </Text>
+                                        &nbsp;&nbsp;Search
+                                    </Text>
                                 </TouchableOpacity>
                             </View>
                             <View style={{ flex: 0.3 }}>

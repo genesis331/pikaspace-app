@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, View, Text, SafeAreaView, ScrollView } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default function Inbox() {
+    const [switchTab, setSwitchTab] = useState(0);
+
     return (
         <View style={styles.container}>
             <View style={styles.layers}>
@@ -12,25 +14,36 @@ export default function Inbox() {
                     </View>
                     <View style={styles.tabView}>
                         <View style={styles.tabsContainer}>
-                            <TouchableOpacity style={{ backgroundColor: "#20517C", paddingHorizontal: 16, paddingVertical: 6, borderRadius: 50, marginRight: 12 }}>
-                                <Text style={{ color: "white", fontFamily: 'MadeTommyMedium', fontSize: 16 }}>Notifications</Text>
+                            <TouchableOpacity 
+                                style={{ paddingHorizontal: 16, paddingVertical: 6, borderRadius: 50, marginRight: 12, backgroundColor: switchTab == 0 ? "#20517C" : "#fff" }}
+                                onPress={() => {
+                                    setSwitchTab(0);
+                                }}
+                            >
+                                <Text style={{ color: switchTab == 0 ? "white" : "black", fontFamily: 'MadeTommyMedium', fontSize: 16 }}>Notifications</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity style={{ paddingHorizontal: 14, paddingVertical: 6 }}>
-                                <Text style={{ fontFamily: 'MadeTommyMedium', fontSize: 16 }}>Chat</Text>
+                            <TouchableOpacity 
+                                style={{ paddingHorizontal: 16, paddingVertical: 6, borderRadius: 50, marginRight: 12, backgroundColor: switchTab == 1 ? "#20517C" : "#fff" }}
+                                onPress={() => {
+                                    setSwitchTab(1);
+                                }}    
+                            >
+                                <Text style={{ color: switchTab == 1 ? "white" : "black", fontFamily: 'MadeTommyMedium', fontSize: 16 }}>Chat</Text>
                             </TouchableOpacity>
                         </View>
-                        <ScrollView style={styles.bodyContainer} horizontal={true} scrollEventThrottle={16} pagingEnabled={true}>
+                        {
+                        switchTab == 0 ? 
+                        <View style={{ minWidth: "100%", minHeight: "75%", paddingTop: 40 }}>
+                            <View style={styles.blankNoti}>
+                                <Text style={{ fontFamily: 'MadeTommyMedium', fontSize: 14 }}>No new notification. (Notifications)</Text>
+                            </View>
+                        </View> :
                             <View style={{ minWidth: "100%", minHeight: "75%", paddingTop: 40 }}>
                                 <View style={styles.blankNoti}>
-                                    <Text style={{ fontFamily: 'MadeTommyMedium', fontSize: 14 }}>No new notification.</Text>
+                                    <Text style={{ fontFamily: 'MadeTommyMedium', fontSize: 14 }}>No new notification. (Chat)</Text>
                                 </View>
                             </View>
-                            <View style={{ minWidth: "100%", minHeight: "75%", paddingTop: 40 }}>
-                                <View style={styles.blankNoti}>
-                                    <Text style={{ fontFamily: 'MadeTommyMedium', fontSize: 14 }}>No new notification.</Text>
-                                </View>
-                            </View>
-                        </ScrollView>
+                        }
                     </View>
                 </SafeAreaView>
             </View>

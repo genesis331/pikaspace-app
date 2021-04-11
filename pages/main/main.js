@@ -42,16 +42,16 @@ export default function Main({ navigation }) {
                     <Home navigation={navigation} />
                 </View>
                 <View style={{ width, height }}>
-                    <Discover />
+                    <Discover navigation={navigation}/>
                 </View>
                 <View style={{ width, height }}>
-                    <Inbox />
+                    <Inbox navigation={navigation}/>
                 </View>
                 <View style={{ width, height }}>
-                    <Profile />
+                    <Profile navigation={navigation}/>
                 </View>
             </ScrollView>
-            <BlurView intensity={60} tint={"light"} style={styles.paginationWrapper}>
+            <BlurView intensity={120} tint={"light"} style={styles.paginationWrapper}>
                 <AntDesign name="home" size={24} color={pageIndex === 0 ? "black" : "lightgrey"} style={styles.tabIcon} onPress={() => { scrollViewRef.current?.scrollTo({ x: 0 }) }} />
                 <AntDesign name="search1" size={24} color={pageIndex === 1 ? "black" : "lightgrey"} style={styles.tabIcon} onPress={() => { scrollViewRef.current?.scrollTo({ x: 1 / 4 * 4 * width }) }} />
                 <AntDesign name="mail" size={24} color={pageIndex === 2 ? "black" : "lightgrey"} style={styles.tabIcon} onPress={() => { scrollViewRef.current?.scrollTo({ x: 2 / 4 * 4 * width }) }} />

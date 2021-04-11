@@ -22,7 +22,7 @@ export default function Home({ navigation }) {
                     <ScrollView>
                         <View style={styles.searchBar}>
                             <View style={{ flex: 0.7 }}>
-                                <TouchableOpacity style={styles.searchInput}>
+                                <TouchableOpacity style={styles.searchInput} onPress={() => navigation.navigate('Search')}>
                                     <Text style={{ fontFamily: 'MadeTommyMedium', fontSize: 17, paddingLeft: 18 }}>
                                         <AntDesign name="search1" size={19} color="black" />
                                 &nbsp;&nbsp;Search
@@ -43,7 +43,7 @@ export default function Home({ navigation }) {
                                 <Image source={tempPic} style={{ borderRadius: 60, height: 45, width: 45 }} />
                             </View>
                         </View>
-                        <HomeCard />
+                        <HomeCard navigation={navigation}/>
                         <HomeCard />
                         <View style={{ height: 120 }}></View>
                     </ScrollView>
