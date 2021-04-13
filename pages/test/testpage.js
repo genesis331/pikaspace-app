@@ -253,7 +253,6 @@ const styles = StyleSheet.create({
     modalView2: {
         flex: 1,
         backgroundColor: 'white',
-        borderRadius: 40,
         paddingVertical: 35,
         alignItems: 'center'
     },
