@@ -49,24 +49,28 @@ export default function TestPage() {
                     <View style={styles.centeredView}>
                         <View style={styles.modalWrapper}>
                             <LinearGradient colors={["#73DFFF", "#16BE8C"]} style={styles.modalView}>
-                                <View style={{ marginHorizontal: 30 }}>
-                                    <FontAwesome5 name="check-circle" size={100} color="white" style={{ textAlign: 'center' }} />
-                                    <Text style={[styles.modalText, { fontSize: 20, paddingTop: 20 }]}>Booked!</Text>
-                                    <Text style={{
-                                        textAlign: 'center',
-                                        color: "white",
-                                        fontFamily: 'MadeTommyRegular'
-                                    }}>
-                                        View your booking in
-                                </Text>
-                                    <Text style={styles.modalText}>Profile &gt; Manage Booking</Text>
-                                    <TouchableOpacity
-                                        style={{ ...styles.openButton, marginTop: 70 }}
-                                        onPress={() => {
-                                            setModalVisible1(!modalVisible1);
+                                <View>
+                                    <View style={{ marginHorizontal: 30 }}>
+                                        <FontAwesome5 name="check-circle" size={100} color="white" style={{ textAlign: 'center' }} />
+                                        <Text style={[styles.modalText, { fontSize: 20, paddingTop: 20 }]}>Booked!</Text>
+                                        <Text style={{
+                                            textAlign: 'center',
+                                            color: "white",
+                                            fontFamily: 'MadeTommyRegular'
                                         }}>
-                                        <Text style={[styles.textStyle, { color: "#2CC6A6" }]}>GO TO MANAGE BOOKING</Text>
-                                    </TouchableOpacity>
+                                            View your booking in
+                                        </Text>
+                                        <Text style={styles.modalText}>Profile &gt; Manage Booking</Text>
+                                    </View>
+                                    <View>
+                                        <TouchableOpacity
+                                            style={{ ...styles.openButton, marginTop: 70, backgroundColor: "#FFFFFF" }}
+                                            onPress={() => {
+                                                setModalVisible1(!modalVisible1);
+                                            }}>
+                                            <Text style={[styles.textStyle, { color: "#2CC6A6" }]}>GO TO MANAGE BOOKING</Text>
+                                        </TouchableOpacity>
+                                    </View>
                                 </View>
                             </LinearGradient>
                         </View>
@@ -80,16 +84,18 @@ export default function TestPage() {
                     <View style={styles.centeredView}>
                         <View style={styles.modalWrapper}>
                             <LinearGradient colors={["#FF8E8E", "#DF0F0F"]} style={styles.modalView}>
-                                <View style={{ marginHorizontal: 30 }}>
-                                    <AntDesign name="closecircleo" size={100} color="white" style={{ textAlign: 'center' }} />
-                                    <Text style={[styles.modalText, { fontSize: 20, paddingTop: 20 }]}>Oh-oh!</Text>
-                                    <Text style={styles.modalText}>It seems there's an issue with your payment.</Text>
+                                <View>
+                                    <View style={{ marginHorizontal: 30 }}>
+                                        <AntDesign name="closecircleo" size={100} color="white" style={{ textAlign: 'center' }} />
+                                        <Text style={[styles.modalText, { fontSize: 20, paddingTop: 20 }]}>Oh-oh!</Text>
+                                        <Text style={styles.modalText}>It seems there's an issue with your payment.</Text>
+                                    </View>
                                     <View>
-                                        <TouchableOpacity style={{ ...styles.openButton, marginTop: 70 }}>
+                                        <TouchableOpacity style={{ ...styles.openButton, marginTop: 70, backgroundColor: "#FFFFFF" }}>
                                             <Text style={[styles.textStyle, { color: "#A23939" }]}>TRY AGAIN</Text>
                                         </TouchableOpacity>
                                         <TouchableOpacity
-                                            style={{ ...styles.openButton, marginTop: 14 }}
+                                            style={{ ...styles.openButton, marginTop: 14, backgroundColor: "#FFFFFF" }}
                                             onPress={() => {
                                                 setModalVisible2(!modalVisible2);
                                             }}>
@@ -257,14 +263,12 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     openButton: {
-        backgroundColor: '#FFFFFF',
         borderRadius: 20,
         paddingVertical: 12,
         paddingHorizontal: 40,
         elevation: 2
     },
     openButton2: {
-        backgroundColor: '#FFFFFF',
         borderRadius: 20,
         paddingVertical: 16,
         paddingHorizontal: 40,
