@@ -1,7 +1,8 @@
 import React from 'react';
-import { StyleSheet, View, ScrollView, ImageBackground, Text, SafeAreaView, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, ScrollView, ImageBackground, Text, SafeAreaView, TouchableOpacity, Image } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import tempImg from "../../assets/images/hardcoded/nastuh-abootalebi-eHD8Y1Znfpk-unsplash.jpg";
+import tempPic from "../../assets/images/hardcoded/shuaiger.png";
 
 export default function ProfileInterface() {
     return (
@@ -13,10 +14,10 @@ export default function ProfileInterface() {
                             <SafeAreaView>
                                 <View style={{ height: "100%", width: "100%", justifyContent: "space-between", paddingHorizontal: 28, paddingBottom: 28 }}>
                                     <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
-                                        <TouchableOpacity style={{marginLeft: 16}}>
+                                        <TouchableOpacity style={{ marginLeft: 16 }}>
                                             <AntDesign name="hearto" size={24} color="white" />
                                         </TouchableOpacity>
-                                        <TouchableOpacity style={{marginLeft: 16}}>
+                                        <TouchableOpacity style={{ marginLeft: 16 }}>
                                             <AntDesign name="notification" size={24} color="white" />
                                         </TouchableOpacity>
                                     </View>
@@ -40,21 +41,123 @@ export default function ProfileInterface() {
                             </SafeAreaView>
                         </ImageBackground>
                     </View>
-                    <View style={{paddingVertical: 30, paddingHorizontal: 50}}>
-                        <View style={{flexDirection: "row", justifyContent: "center"}}>
-                            <View style={{flex: 0.5}}>
-                                <Text><AntDesign name="laptop" size={24} color="black" />Home Office</Text>
-                                <Text><AntDesign name="user" size={24} color="black" />2 Person</Text>
-                                <Text><AntDesign name="wifi" size={24} color="black" />Wi-Fi</Text>
+                    <View style={{ paddingVertical: 30, paddingHorizontal: 50 }}>
+                        <View style={{ flexDirection: "row", justifyContent: "center" }}>
+                            <View style={{ flex: 0.4 }}>
+                                <View style={styles.featureRow}>
+                                    <View><AntDesign name="laptop" size={24} color="black" /></View>
+                                    <View style={styles.featureTextView}><Text style={styles.featureText}>Home Office</Text></View>
+                                </View>
+                                <View style={styles.featureRow}>
+                                    <View><AntDesign name="user" size={24} color="black" /></View>
+                                    <View style={styles.featureTextView}><Text style={styles.featureText}>2 Person</Text></View>
+                                </View>
+                                <View style={styles.featureRow}>
+                                    <View><AntDesign name="wifi" size={24} color="black" /></View>
+                                    <View style={styles.featureTextView}><Text style={styles.featureText}>Wi-Fi</Text></View>
+                                </View>
                             </View>
-                            <View style={{flex: 0.5}}>
-                                <Text><AntDesign name="find" size={24} color="black" />Safety</Text>
-                                <Text><AntDesign name="rest" size={24} color="black" />AC</Text>
-                                <Text><AntDesign name="key" size={24} color="black" />Parking</Text>
+                            <View style={{ flex: 0.2 }}></View>
+                            <View style={{ flex: 0.4 }}>
+                                <View style={styles.featureRow}>
+                                    <View><AntDesign name="find" size={24} color="black" /></View>
+                                    <View style={styles.featureTextView}><Text style={styles.featureText}>Safety</Text></View>
+                                </View>
+                                <View style={styles.featureRow}>
+                                    <View><AntDesign name="rest" size={24} color="black" /></View>
+                                    <View style={styles.featureTextView}><Text style={styles.featureText}>AC</Text></View>
+                                </View>
+                                <View style={styles.featureRow}>
+                                    <View><AntDesign name="key" size={24} color="black" /></View>
+                                    <View style={styles.featureTextView}><Text style={styles.featureText}>Parking</Text></View>
+                                </View>
                             </View>
                         </View>
                     </View>
+                    <View style={{ paddingVertical: 10, flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
+                        <Text style={{ fontFamily: 'MadeTommyMedium', fontSize: 18 }}>
+                            Details
+                        </Text>
+                        <AntDesign name="down" size={17} color="black" style={{ marginLeft: 8 }} />
+                    </View>
+                    <View style={{ paddingVertical: 10, flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
+                        <Text style={{ fontFamily: 'MadeTommyMedium', fontSize: 18 }}>
+                            See more
+                        </Text>
+                        <AntDesign name="down" size={17} color="black" style={{ marginLeft: 8 }} />
+                    </View>
+                    <View style={{ paddingVertical: 20, flexDirection: "row", paddingHorizontal: 35 }}>
+                        <Text style={{ fontFamily: 'MadeTommyMedium', fontSize: 22 }}>
+                            Explore nearby spaces
+                        </Text>
+                    </View>
+                    <View style={{ paddingVertical: 20, flexDirection: "row", paddingHorizontal: 35, justifyContent: "space-between" }}>
+                        <Text style={{ fontFamily: 'MadeTommyMedium', fontSize: 22 }}>
+                            352 Reviews
+                        </Text>
+                        <View style={{ flexDirection: "row", alignItems: "baseline" }}>
+                            <Text style={{ fontFamily: 'MadeTommyMedium', fontSize: 22 }}>4.9</Text>
+                            <Text style={{ fontFamily: 'MadeTommyRegular', fontSize: 14 }}>/5</Text>
+                        </View>
+                    </View>
+                    <View style={{ paddingTop: 20, flexDirection: "row", paddingHorizontal: 35, justifyContent: "space-between", alignItems: "center" }}>
+                        <View>
+                            <View style={{ marginVertical: 4 }}><Text style={{ fontFamily: 'MadeTommyMedium', fontSize: 32 }}>Owner</Text></View>
+                            <View style={{ marginVertical: 4 }}><Text style={{ fontFamily: 'MadeTommyRegular', fontSize: 26 }}>Crystal Khoo</Text></View>
+                        </View>
+                        <View>
+                            <View>
+                                <Image source={tempPic} style={{ borderRadius: 60, height: 80, width: 80 }} />
+                            </View>
+                        </View>
+                    </View>
+                    <View style={{ flexDirection: "row", paddingHorizontal: 35, paddingVertical: 20 }}>
+                        <TouchableOpacity style={{
+                            borderRadius: 20,
+                            paddingVertical: 14,
+                            elevation: 2,
+                            backgroundColor: '#ffffff',
+                            borderColor: '#20517C',
+                            borderWidth: 2,
+                            flex: 1
+                        }}>
+                            <Text style={{
+                                color: '#20517C',
+                                textAlign: 'center',
+                                fontSize: 12,
+                                fontFamily: 'MadeTommyBold'
+                            }}>CONTACT OWNER</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={{ paddingVertical: 10, flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
+                        <Text style={{ fontFamily: 'MadeTommyMedium', fontSize: 18 }}>
+                            More info about the owner
+                        </Text>
+                        <AntDesign name="down" size={17} color="black" style={{ marginLeft: 8 }} />
+                    </View>
+                    <View style={{ paddingTop: 60, flexDirection: "row", paddingHorizontal: 35 }}>
+                        <Text style={{ fontFamily: 'MadeTommyMedium', fontSize: 22 }}>
+                            Related spaces
+                        </Text>
+                    </View>
+                    <View style={{ height: 160 }}></View>
                 </ScrollView>
+                <View style={{ height: 120, alignItems: "center", position: "absolute", bottom: 0, width: "100%" }}>
+                    <TouchableOpacity style={{
+                        borderRadius: 20,
+                        paddingVertical: 16,
+                        paddingHorizontal: 40,
+                        elevation: 2,
+                        backgroundColor: '#20517C'
+                    }}>
+                        <Text style={{
+                            color: 'white',
+                            textAlign: 'center',
+                            fontSize: 14,
+                            fontFamily: 'MadeTommyBold'
+                        }}>BOOK</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
         </View>
     )
@@ -71,5 +174,16 @@ const styles = StyleSheet.create({
         position: "absolute",
         top: 0,
         flex: 1
+    },
+    featureRow: {
+        flexDirection: "row",
+        paddingVertical: 8,
+        alignItems: "center"
+    },
+    featureTextView: {
+        paddingLeft: 12
+    },
+    featureText: {
+        fontFamily: 'MadeTommyRegular'
     }
 });

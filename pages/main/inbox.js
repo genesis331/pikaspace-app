@@ -35,12 +35,12 @@ export default function Inbox() {
                         switchTab == 0 ? 
                         <View style={{ minWidth: "100%", minHeight: "75%", paddingTop: 40 }}>
                             <View style={styles.blankNoti}>
-                                <Text style={{ fontFamily: 'MadeTommyMedium', fontSize: 14 }}>No new notification. (Notifications)</Text>
+                                <Text style={{ fontFamily: 'MadeTommyMedium', fontSize: 14 }}>No new notification.</Text>
                             </View>
                         </View> :
                             <View style={{ minWidth: "100%", minHeight: "75%", paddingTop: 40 }}>
                                 <View style={styles.blankNoti}>
-                                    <Text style={{ fontFamily: 'MadeTommyMedium', fontSize: 14 }}>No new notification. (Chat)</Text>
+                                    <Text style={{ fontFamily: 'MadeTommyMedium', fontSize: 14 }}>No new notification.</Text>
                                 </View>
                             </View>
                         }

@@ -52,10 +52,10 @@ export default function Main({ navigation }) {
                 </View>
             </ScrollView>
             <BlurView intensity={120} tint={"light"} style={styles.paginationWrapper}>
-                <AntDesign name="home" size={24} color={pageIndex === 0 ? "black" : "lightgrey"} style={styles.tabIcon} onPress={() => { scrollViewRef.current?.scrollTo({ x: 0 }) }} />
-                <AntDesign name="search1" size={24} color={pageIndex === 1 ? "black" : "lightgrey"} style={styles.tabIcon} onPress={() => { scrollViewRef.current?.scrollTo({ x: 1 / 4 * 4 * width }) }} />
-                <AntDesign name="mail" size={24} color={pageIndex === 2 ? "black" : "lightgrey"} style={styles.tabIcon} onPress={() => { scrollViewRef.current?.scrollTo({ x: 2 / 4 * 4 * width }) }} />
-                <AntDesign name="user" size={24} color={pageIndex === 3 ? "black" : "lightgrey"} style={styles.tabIcon} onPress={() => { scrollViewRef.current?.scrollTo({ x: 3 / 4 * 4 * width }) }} />
+                <AntDesign name="home" size={24} color={pageIndex === 0 ? "black" : "grey"} style={styles.tabIcon} onPress={() => { scrollViewRef.current?.scrollTo({ x: 0 }) }} />
+                <AntDesign name="search1" size={24} color={pageIndex === 1 ? "black" : "grey"} style={styles.tabIcon} onPress={() => { scrollViewRef.current?.scrollTo({ x: 1 / 4 * 4 * width }) }} />
+                <AntDesign name="mail" size={24} color={pageIndex === 2 ? "black" : "grey"} style={styles.tabIcon} onPress={() => { scrollViewRef.current?.scrollTo({ x: 2 / 4 * 4 * width }) }} />
+                <AntDesign name="user" size={24} color={pageIndex === 3 ? "black" : "grey"} style={styles.tabIcon} onPress={() => { scrollViewRef.current?.scrollTo({ x: 3 / 4 * 4 * width }) }} />
             </BlurView>
         </View>
     )
